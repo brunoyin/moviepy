@@ -140,9 +140,11 @@ def color_gradient(size,p1,p2=None,vector=None, r=None, col1=0,col2=1.0,
     if vector is None and p2:
         p2 = np.array(p2[::-1])
         vector = p2-p1
-    else:
+    elif vector is not None:
         vector = np.array(vector[::-1])
         p2 = p1 + vector
+    else:
+        pass
     
     if vector:    
         norm = np.linalg.norm(vector)
